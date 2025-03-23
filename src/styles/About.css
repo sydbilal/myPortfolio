@@ -1,0 +1,124 @@
+/* About Section */
+.about-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  /* background: linear-gradient(to right, #121212, #1f1f1f); */
+  color: white;
+}
+
+/* About Card */
+.about-card-wrapper {
+  width: 90%;
+  max-width: 900px;
+}
+
+.about-card {
+  background: rgba(49, 49, 49, 0.9);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  box-shadow: 0px 10px 40px rgba(0, 255, 255, 0.3);
+}
+
+/* About Header (Flexbox for Alignment) */
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  justify-content: flex-start;
+}
+
+/* Profile Image (Avatar) */
+.about-avatar {
+  width: 70px;
+  height: 70px;
+  /* border: 3px solid rgba(0, 255, 255, 0.6); */
+  /* box-shadow: 0px 5px 15px rgba(0, 255, 255, 0.3); */
+}
+
+/* Title */
+.about-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #00bcd4;
+}
+
+/* Description */
+.about-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #ddd;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+
+/* Resume Button */
+.resume-btn-wrapper {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.resume-btn {
+  background-color: #00aaff !important;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.resume-btn:hover {
+  background-color: #008ecc !important;
+}
+
+/* 📱 Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .about-card {
+    padding: 20px; /* Reduce padding for smaller screens */
+    border-radius: 16px;
+  }
+
+  .about-header {
+    flex-direction: column; /* Stack avatar and title */
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .about-title {
+    font-size: 24px;
+  }
+
+  .about-text {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-card {
+    padding: 15px;
+  }
+
+  .about-title {
+    font-size: 22px;
+  }
+
+  .about-text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}

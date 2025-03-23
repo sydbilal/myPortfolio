@@ -1,0 +1,133 @@
+/* Navbar */
+.navbar {
+  font-family: 'Poppins', sans-serif;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(3px);
+  background-color: rgba(252, 255, 255, 0.7);
+  padding: 20px 40px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 10px rgba(136, 247, 255, 0.2);
+}
+
+/* Container */
+.nav-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* Branding */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.brand img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.brand h1 {
+  font-family: 'Poppins', sans-serif;
+
+  padding-top: 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+}
+
+/* Desktop Navigation */
+.desktop-menu {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  border: none;
+  background: none !important
+}
+
+.nav-links .ant-menu-item {
+  font-family: 'Poppins', sans-serif;
+
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+}
+
+.nav-links .ant-menu-item:hover {
+  color: #00bcd4;
+}
+
+/* Contact Button (Desktop) */
+.contact-btn-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.contact-button {
+  font-family: 'Poppins', sans-serif;
+
+  background-color: #00bcd4 !important; 
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 20px 15px !important;
+  border-radius: 25px !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 150px;
+}
+
+.contact-button:hover {
+  background-color: #0097a7;
+}
+
+/* Mobile Menu Icon */
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: black;
+}
+
+/* Drawer (Mobile Menu) */
+.drawer-menu {
+  border: none !important;
+  padding-top: 20px;
+}
+
+.drawer-menu .ant-menu-item {
+  font-size: 14px;
+  /* font-weight: bold; */
+  padding: 1px;
+  text-align: center;
+}
+
+/* Responsive: Hide Desktop Menu & Show Mobile Icon */
+@media (max-width: 768px) {
+  .desktop-menu,
+  .contact-btn-wrapper {
+    display: none; /* Hide desktop menu & contact button */
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}

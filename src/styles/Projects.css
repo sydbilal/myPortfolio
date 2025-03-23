@@ -1,0 +1,98 @@
+/* Project Section */
+.projects-section {
+  height: 300vh; /* 3x the hero section */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Individual Project Cards */
+.project-card {
+  position: sticky;
+  top: 10vh;
+  width: 85%;
+  max-width: 900px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  text-align: center;
+
+}
+
+/* Card Content */
+.project-card-content {
+  width: 100%;
+  padding: 40px;
+  border-radius: 16px;
+  text-align: center;
+  background: linear-gradient(to bottom right, rgb(214, 255, 252), rgb(224, 224, 224)); 
+}
+
+/* Project Image */
+.project-image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Title */
+.project-title {
+  color: rgb(0, 0, 0);
+  font-size: 34px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Description */
+.project-description {
+  color: #000000;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Tech Stack */
+.tech-stack {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tech-item {
+  background: rgba(0, 0, 0, 0.1);
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  text-transform: uppercase;
+}
+
+/* Project Button */
+.project-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.project-btn:hover {
+  background-color: #111;
+  color: white;
+}

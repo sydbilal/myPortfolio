@@ -1,0 +1,99 @@
+/* Full Page Layout */
+.contact-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.2), rgba(0, 0, 255, 0.1));
+    padding: 80px 20px;
+  }
+  
+  /* Contact Card (Similar to Hero Section) */
+  .contact-card {
+    width: 90%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 30px; /* Rounded corners like hero section */
+    box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.3);
+    padding: 50px;
+    transition: transform 0.3s ease;
+  }
+  
+  .contact-card:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Title */
+  .contact-title {
+    font-size: clamp(24px, 4vw, 32px);
+    font-weight: bold;
+    color: #00bcd4;
+    margin-bottom: 20px;
+  }
+  
+  /* Contact Form */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .contact-input,
+  .contact-textarea {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .contact-textarea {
+    height: 120px;
+    resize: none;
+  }
+  
+  /* Button Styling */
+  .contact-button {
+    width: 100%;
+    padding: 14px;
+    background-color: #00bcd4;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .contact-button:hover {
+    background-color: #0097a7;
+  }
+  
+  /* 🔹 Responsive Adjustments */
+  @media (max-width: 768px) {
+    .contact-card {
+      width: 95%;
+      padding: 30px;
+    }
+  
+    .contact-title {
+      font-size: 24px;
+    }
+  
+    .contact-input,
+    .contact-textarea {
+      font-size: 0.9rem;
+    }
+  
+    .contact-button {
+      font-size: 1rem;
+    }
+  }
+  
