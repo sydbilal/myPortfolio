@@ -1,10 +1,15 @@
 // src/components/Contact.jsx
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import "../styles/Contact.css"; // Import CSS
+import emailjs from "@emailjs/browser"; // ✅ Import EmailJS
+import toast from "react-hot-toast"; // ✅ Import toast
+
+import "../styles/Contact.css";
 
 const Contact = () => {
+  const formRef = useRef(); // ✅ Reference to the form
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [isSending, setIsSending] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -12,7 +17,26 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormData({ name: "", email: "", message: "" });
+    setIsSending(true);
+
+    emailjs
+      .sendForm(
+        "service_y6eorrb",      // 🔁 Replace with your EmailJS service ID
+        "template_1rgtwbr",     // 🔁 Replace with your template ID
+        formRef.current,
+        "2lbMPNIerDUS_Z82n"       // 🔁 Replace with your public key
+      )
+      .then(
+        (result) => {
+          toast.success("Message sent successfully!"); // ✅ Show success toast
+  setFormData({ name: "", email: "", message: "" }); // ✅ Clear form
+  setIsSending(false);
+        },
+        (error) => {
+          toast.error("Something went wrong. Please try again."); // ✅ Show error toast
+          setIsSending(false);
+        }
+      );
   };
 
   return (
@@ -23,9 +47,10 @@ const Contact = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        Get in Touch
+        Leave me a message
       </motion.h2>
       <motion.form
+        ref={formRef} // ✅ Attach ref to the form
         className="contact-form"
         onSubmit={handleSubmit}
         initial={{ opacity: 0, y: 50 }}
@@ -58,8 +83,8 @@ const Contact = () => {
           required
           className="contact-textarea"
         />
-        <button type="submit" className="contact-button">
-          Send Message
+        <button type="submit" className="contact-button" disabled={isSending}>
+          {isSending ? "Sending..." : "Send Message"}
         </button>
       </motion.form>
     </section>

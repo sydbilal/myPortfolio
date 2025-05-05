@@ -1,153 +1,78 @@
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
+
+
 /* Skills Section */
 .skills-container {
+  /* background-color: #fdf6ff; */
+  margin-top: 80px;
   text-align: center;
-  color: white;
-  padding: 50px 20px;
-  min-height: 100vh;
+  color: #2d2e32;
+  padding: 60px 50px;
 }
 
 /* Title */
 .skills-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #00aaff;
+  font-size: 2.8rem;
+  color: #2d2e32;
   margin-bottom: 40px;
-}
-
-/* Skills Grid */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-  justify-items: center;
-  max-width: 1100px;
-  margin: 0 auto;
+  font-weight: bold;
 }
 
 /* Skill Card */
 .skill-card {
-  width: 100%;
-  max-width: 220px;
+  padding: 10px;
+  max-width: 300px; /* Limit width */
+  margin: auto;     /* Center each card */
 }
 
-/* Skill Card Content */
 .skill-card-content {
-  background: rgba(49, 49, 49, 0.9);
-  padding: 20px;
-  border-radius: 16px;
-  text-align: center;
-  backdrop-filter: blur(10px);
-  box-shadow: 0px 10px 30px rgba(0, 255, 255, 0.2);
+  background: #c3bce7;
+  border-radius: 20px;
+  box-shadow: 0px 8px 25px rgba(163, 196, 243, 0.3);
+  padding: 16px;  /* Slightly reduced */
 }
 
-/* Skill Name */
+/* Name */
 .skill-name {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #00aaff;
-  margin-bottom: 10px;
+  color: #2d2e32;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
 }
 
-/* Circular Progress */
+/* Circle Progress */
 .skill-circle {
   position: relative;
   width: 100px;
   height: 100px;
-  margin: 0 auto;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Skill Logo */
 .skill-logo {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 32px;
-  color: #00aaff;
+  font-size: 30px;
+  color: #ffffff;
 }
 
-/* Skill Description */
 .skill-description {
   font-size: 14px;
-  color: #ddd;
   margin-top: 10px;
+  color: #2d2e32;
 }
 
-/* Responsive Design */
-
-/* Tablets */
-@media screen and (max-width: 1024px) {
-  .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 15px;
-  }
-
-  .skill-card {
-    max-width: 180px;
-  }
-
-  .skill-logo {
-    font-size: 28px;
-  }
-
-  .skill-description {
-    font-size: 13px;
-  }
+/* Carousel Buttons */
+.slick-prev:before,
+.slick-next:before {
+  color: #c3bce7;
+  font-size: 30px;
 }
 
-/* Mobile */
-@media screen and (max-width: 768px) {
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-
-  .skill-card {
-    max-width: 160px;
-  }
-
-  .skill-circle {
-    width: 90px;
-    height: 90px;
-  }
-
-  .skill-logo {
-    font-size: 24px;
-  }
-
-  .skill-description {
-    font-size: 12px;
-  }
-}
-
-/* Small Mobile */
-@media screen and (max-width: 480px) {
-  .skills-title {
-    font-size: 2rem;
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-  }
-
-  .skill-card {
-    max-width: 140px;
-  }
-
-  .skill-circle {
-    width: 80px;
-    height: 80px;
-  }
-
-  .skill-logo {
-    font-size: 20px;
-  }
-
-  .skill-description {
-    font-size: 10px;
-  }
+.slick-dots li button:before {
+  color: #a3c4f3;
 }

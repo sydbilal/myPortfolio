@@ -1,67 +1,88 @@
 import React from "react";
-import { motion } from "framer-motion";
-import "../styles/Projects.css"; // Import custom styles
-
-// Import images properly
-import healthDashboardImg from "../assets/hjeenfoods.png";
-import botatixAiImg from "../assets/salespersonapp.png";
-import medicalRecordsImg from "../assets/hotelbookingapp.png";
+import Slider from "react-slick";
+import "../styles/Projects.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const projects = [
   {
+    title: "Web Optim",
+    description: "A Web optimization and SEO improvement platform powered by AI.",
+    techStack: ["Next.js", "Express.js", "MongoDB", "Tailwind CSS", "OPENAI API"],
+    image: "/weboptim.png",
+    link: "https://hotel-management-system-c8ov.vercel.app/",
+  },
+  {
     title: "Hjeen Foods",
-    description: "A highly responsive and user-friendly coffee e-commerce website for Saudi Arabia. Featuring dual-language support, authentication, authorization, and seamless payment integration with Admin Dashboard management.",
+    description: "Coffee e-commerce website with admin dashboard, dual language, and payments.",
     techStack: ["React", "Redux", "Express.js", "Node.js", "PostgreSQL", "Stripe API"],
-    image: healthDashboardImg,
+    image: "/hjeenfoods.png",
     link: "https://shop.hjeen.com/",
   },
   {
     title: "Salesperson App",
-    description: "A powerful app for vendors to collect orders from shopkeepers effortlessly. Enables vendors to manage goods, track sales, contact shopkeepers, and streamline order processing for an efficient business workflow with Admin Dashboard Management.",
-    techStack: ["React", "Redux", "TailwindCSS", "Express.js", "Node.js", "MongoDB" ],
-    image: botatixAiImg,
+    description: "Vendor tool for managing sales, shopkeeper contacts, and order tracking.",
+    techStack: ["React", "Redux", "TailwindCSS", "Express.js", "Node.js", "MongoDB"],
+    image: "/salespersonapp.png",
     link: "https://github.com/sydbilal/vender-app",
   },
   {
     title: "Hotel Management System",
-    description: "A hotel booking and management system that lets users search, book, and manage hotel stays with online payment integration. It features an admin panel for hotel owners to manage room availability, pricing, and reservations efficiently.",
+    description: "Hotel booking with admin panel, room pricing and Stripe integration.",
     techStack: ["Next.js", "Express.js", "MongoDB", "Tailwind CSS", "Stripe API"],
-    image: medicalRecordsImg,
+    image: "/hotelbookingapp.png",
     link: "https://hotel-management-system-c8ov.vercel.app/",
-  }
+  },
 ];
 
-
 const Projects = () => {
-  return (
-    <section id="projects" className="projects-section">
-      {projects.map((project, index) => (
-        <motion.div
-          key={index}
-          className="project-card"
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: index * 0.3 }}
-          viewport={{ once: false, amount: 0.5 }}
-        >
-          <div className="project-card-content">
-            <img src={project.image} alt={project.title} className="project-image" />
-            <h2 className="project-title">{project.title}</h2>
-            <p className="project-description">{project.description}</p>
-            
-            {/* Tech Stack Section */}
-            <ul className="tech-stack">
-              {project.techStack.map((tech, i) => (
-                <li key={i} className="tech-item">{tech}</li>
-              ))}
-            </ul>
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 700,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: "80px",
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          centerPadding: "20px",
+        },
+      },
+    ],
+  };
 
-            <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-btn">
-              View Project
-            </a>
+  return (
+    <section id="projects" className="projects-carousel-section">
+      <Slider {...settings} className="project-slider">
+        {projects.map((project, index) => (
+          <div key={index} className="project-card">
+            <div className="project-card-content">
+              <img src={project.image} alt={project.title} className="project-image" />
+              <h2 className="project-title">{project.title}</h2>
+              <p className="project-description">{project.description}</p>
+
+              <ul className="tech-stack">
+                {project.techStack.map((tech, i) => (
+                  <li key={i} className="tech-item">{tech}</li>
+                ))}
+              </ul>
+
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-btn"
+              >
+                View Project
+              </a>
+            </div>
           </div>
-        </motion.div>
-      ))}
+        ))}
+      </Slider>
     </section>
   );
 };

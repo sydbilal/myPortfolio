@@ -1,5 +1,6 @@
 /* About Section */
 .about-container {
+  margin-top: 200px;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -7,7 +8,7 @@
   text-align: center;
   padding: 0 20px;
   /* background: linear-gradient(to right, #121212, #1f1f1f); */
-  color: white;
+  color: #333333;
 }
 
 /* About Card */
@@ -17,7 +18,7 @@
 }
 
 .about-card {
-  background: rgba(49, 49, 49, 0.9);
+  background: #a0d2eb7c;
   padding: 40px;
   border-radius: 20px;
   text-align: center;
@@ -53,7 +54,7 @@
 .about-text {
   font-size: 18px;
   line-height: 1.8;
-  color: #ddd;
+  color: #333333;
   text-align: justify;
   margin-bottom: 15px;
 }

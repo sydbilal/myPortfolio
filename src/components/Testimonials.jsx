@@ -5,25 +5,40 @@ import "../styles/Testimonials.css"; // Import CSS
 
 const testimonials = [
   {
-    name: "John Doe",
-    role: "CEO, Tech Corp",
+    name: "Danish Ali",
+    role: "CEO, Hjeen Foods",
     feedback:
-      "Mustafa is a brilliant developer! His attention to detail and ability to meet deadlines is exceptional.",
-    avatar: "/images/john.jpg",
+      "Bilal is a brilliant developer. His attention to detail and ability to meet deadlines is exceptional.",
   },
   {
-    name: "Sarah Khan",
-    role: "Project Manager, Web Solutions",
+    name: "Mustafa Nadeem",
+    role: "Software Architect Engineer, XREF",
     feedback:
-      "Working with Mustafa was a great experience. His expertise in React and backend technologies is top-notch!",
-    avatar: "/images/sarah.jpg",
+      "Working with Bilal was a great experience. His expertise in React and backend technologies is top-notch.",
   },
   {
     name: "Ali Raza",
-    role: "Founder, Startup XYZ",
+    role: "Founder, Startup Tech360",
     feedback:
-      "Mustafa delivered a high-quality product within the deadline. Highly recommended!",
-    avatar: "/images/ali.jpg",
+      "Bilal delivered a high-quality product within the deadline. Highly recommended!",
+  },
+  {
+    name: "Faheem",
+    role: "Associate Software Engineer, Enterprise Cube",
+    feedback:
+      "He has exceptional coding and problem-solving skills. Highly recommended!",
+  },
+  {
+    name: "Asad Ali",
+    role: "Senior Software Engineer, Enterprise Cube",
+    feedback:
+      "He is great and fun to work with and for sure a quick learner",
+  },
+  {
+    name: "Majez Chishti",
+    role: "Project Manager, CafeBazaar",
+    feedback:
+      "Bilal's problem-solving skills, his coding ability, and handling tough deadlines makes him exeptional. Had fun working with him.",
   },
 ];
 
@@ -46,7 +61,6 @@ const Testimonials = () => {
       >
         {testimonials.map((review, index) => (
           <div key={index} className="testimonial-card">
-            <img src={review.avatar} alt={review.name} className="testimonial-avatar" />
             <h3 className="testimonial-name">{review.name}</h3>
             <p className="testimonial-role">{review.role}</p>
             <p className="testimonial-feedback">"{review.feedback}"</p>

@@ -3,8 +3,6 @@ import { motion } from "framer-motion";
 import { Card, Avatar, Button } from "antd";
 import { UserOutlined, DownloadOutlined } from "@ant-design/icons";
 import "../styles/About.css";
-import profileImg from "../assets/myimage.jpeg"; // Your image
-import resume from "../assets/bilal's resume.pdf"; // Import resume
 
 const About = () => {
   return (
@@ -18,7 +16,7 @@ const About = () => {
       >
         <Card className="about-card" bordered={false}>
           <div className="about-header">
-            <Avatar size={80} src={profileImg} className="about-avatar" />
+            <Avatar size={80} src="/myImage.jpeg" className="about-avatar" />
             <h2 className="about-title">About Me</h2>
           </div>
           <motion.p 
@@ -43,8 +41,8 @@ const About = () => {
               type="primary"
               icon={<DownloadOutlined />}
               size="large"
-              href={resume} // Link to the imported resume
-              download="Bilal_Nadeem_Resume.pdf" // Set the downloaded file name
+              // href={resume} // Link to the imported resume
+              download="/Bilal_Nadeem_Resume.pdf" // Set the downloaded file name
               className="resume-btn"
             >
               Download Resume

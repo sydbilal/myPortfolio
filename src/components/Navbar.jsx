@@ -3,7 +3,6 @@ import { Menu, Button, Drawer } from "antd";
 import { Link as ScrollLink } from "react-scroll";
 import { MenuOutlined } from "@ant-design/icons";
 import "../styles/Navbar.css";
-import profilePic from "../assets/myImage.jpeg";
 
 const Navbar = () => {
   const [drawerVisible, setDrawerVisible] = useState(false);
@@ -16,7 +15,7 @@ const Navbar = () => {
       <div className="nav-container">
         {/* Left Side: Logo & Name */}
         <div className="brand">
-          <img src={profilePic} alt="Profile" />
+          <img src="/myImage.jpeg" alt="Profile" />
           <h1>Syed Bilal</h1>
         </div>
 
